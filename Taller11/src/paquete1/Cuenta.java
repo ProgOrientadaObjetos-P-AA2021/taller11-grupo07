@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author xavierchavez
+ * @author Renny
  */
 public class Cuenta{
 

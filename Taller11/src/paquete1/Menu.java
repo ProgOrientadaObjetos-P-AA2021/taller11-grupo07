@@ -9,7 +9,7 @@ package paquete1;
 
 /**
  *
- * @author xavierchavez
+ * @author Renny
  */
 public abstract class Menu {
 

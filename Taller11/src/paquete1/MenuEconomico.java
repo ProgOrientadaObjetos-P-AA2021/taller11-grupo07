@@ -7,7 +7,7 @@ package paquete1;
 
 /**
  *
- * @author xavierchavez
+ * @author Renny
  */
 public class MenuEconomico extends Menu {
 
