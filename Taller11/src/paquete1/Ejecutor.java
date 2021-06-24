@@ -19,8 +19,7 @@ public class Ejecutor {
     public static void main(String[] args) {
         ArrayList<Menu> listaArriendos = new ArrayList<>();
 
-        MenuNin nin = new MenuNin(
-                "Christian Shepherd", 300, 40.2, 20.2, 10);
+        MenuNin nin = new MenuNin("Xavier", 3.00, 1.5, 5.2);
         //arriendoComida.establecerIva(10); // en porcentaje
         //arriendoComida.establecerValorAgua(20.2); // en $
         //arriendoComida.establecerValorLuz(40.2); // en $

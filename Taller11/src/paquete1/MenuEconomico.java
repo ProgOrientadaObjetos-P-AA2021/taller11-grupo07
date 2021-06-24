@@ -13,6 +13,11 @@ public class MenuEconomico extends Menu {
 
     private double porcentaje;
 
+    public MenuEconomico(String nom, double valIni, double porc) {
+        super(nom, valIni);
+        establecerPorcentaje(porc);
+    }
+
     public void establecerPorcentaje(double n) {
         porcentaje = n;
     }

@@ -14,6 +14,12 @@ public class MenuNin extends Menu {
     private double valHelado;
     private double valPastel;
 
+    public MenuNin(String nom, double valIni, double valHel, double valPas) {
+        super(nom, valIni);
+        establecerValHelado(valHel);
+        establecerValPastel(valPas);
+    }
+
     public void establecerValHelado(double n) {
         valHelado = n;
     }
