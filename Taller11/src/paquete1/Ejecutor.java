@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Renny
+ * @author xavierchavez
  */
 public class Ejecutor {
 
@@ -17,36 +17,26 @@ public class Ejecutor {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Menu> listaArriendos = new ArrayList<>();
+        ArrayList<Menu> listaMenu = new ArrayList<>();
 
-        MenuNin nin = new MenuNin("Xavier", 3.00, 1.5, 5.2);
-        //arriendoComida.establecerIva(10); // en porcentaje
-        //arriendoComida.establecerValorAgua(20.2); // en $
-        //arriendoComida.establecerValorLuz(40.2); // en $
-
-        ArriendoLocalComercial arriendoComercial = new ArriendoLocalComercial(
-                "Andrew Schroeder", 400, 100);
-        //arriendoComercial.establecerValorAdicionalFijo(100); // en $
-
-        ArriendoLocalSesiones arriendoSesiones = new ArriendoLocalSesiones(
-                "Angela Watson", 350);
-        arriendoSesiones.establecerValorSillas(10); // en $
-        arriendoSesiones.establecerValorAmplificacion(20); // en $
-
-        listaArriendos.add(arriendoComida);
-        listaArriendos.add(arriendoComercial);
-        listaArriendos.add(arriendoSesiones);
-
-        for (int i = 0; i < listaArriendos.size(); i++) {
-            listaArriendos.get(i).establecerArriendoMensual();
+        MenuNin nin = new MenuNin("Sándwich de quese", 3.00, 1.5, 5.2);
+        MenuNin nin2 = new MenuNin("Khachapuri ", 4.00, 2.5, 6.2);
+        MenuEconomico me = new MenuEconomico("Ćevapi", 4.5, 12);
+        MenuDia md = new MenuDia("Sushi", 4.5, 0.30, 1.20);
+        MenuCarta mc = new MenuCarta("Spaghetti a la carbonara", 5.3, 6.2, 1.15, 14);
+        listaMenu.add(nin);
+        listaMenu.add(nin2);
+        listaMenu.add(me);
+        listaMenu.add(md);
+        listaMenu.add(mc);
+        for (int i = 0; i < listaMenu.size(); i++) {
+            listaMenu.get(i).establecerValMenu();
         }
-
-        CentroComercial centro = new CentroComercial("La Pradera",
-                listaArriendos);
-        centro.establecerTotalArriendosBaseMensual();
-        centro.establecerTotalArriendosFinalMensual();
-        System.out.println(centro);
+        Cuenta cuen = new Cuenta("Xavier", listaMenu, 14);
+        cuen.establecerSubtotal();
+        cuen.establecerValTotal();
+        System.out.println(cuen);
 
     }
-    
+
 }

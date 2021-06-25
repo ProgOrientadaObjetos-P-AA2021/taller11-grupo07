@@ -11,13 +11,20 @@ import java.util.ArrayList;
  *
  * @author Renny
  */
-public class Cuenta{
+public class Cuenta {
 
     protected String nomCliente;
     protected ArrayList<Menu> listaMenu = new ArrayList<>();
     protected double valTotal;
     protected double subtotal;
     protected double iva;
+
+    public Cuenta(String nom, ArrayList<Menu> n, double iv) {
+        listaMenu = n;
+        nomCliente = nom;
+        iva = iv;
+
+    }
 
     public void establecerNomCliente(String n) {
         nomCliente = n;
@@ -27,16 +34,18 @@ public class Cuenta{
         listaMenu = n;
     }
 
-    public void establecerValTotal(){
-        
-    }
-
-    public void establecerSubtotal(double n) {
-        subtotal = n;
+    public void establecerSubtotal() {
+        for (int i = 0; i < obtenerListaMenu().size(); i++) {
+            subtotal = subtotal + obtenerListaMenu().get(i).obtenerValMenu();
+        }
     }
 
     public void establecerIva(double n) {
-        iva = n;
+        iva = n / 100;
+    }
+
+    public void establecerValTotal() {
+        valTotal = subtotal + iva;
     }
 
     public String obtenerNomCliente() {
@@ -57,6 +66,24 @@ public class Cuenta{
 
     public double obtenerIva() {
         return iva;
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("Nombre del cliente: %s\n"
+                + "Subtotal: %.2f$\nIva: %.2f$\n"
+                + "\n---- Listado de Menus ----\n", nomCliente, subtotal, iva);
+
+        for (int i = 0; i < listaMenu.size(); i++) {
+            cadena = String.format("%s"
+                    + "%s\n",
+                    cadena,
+                    listaMenu.get(i));
+        }
+        cadena = String.format("%s\nValor a cancelar total: %.2f$", cadena, valTotal);
+
+        return cadena;
+
     }
 
 }

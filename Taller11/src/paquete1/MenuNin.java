@@ -27,7 +27,7 @@ public class MenuNin extends Menu {
     public void establecerValPastel(double n) {
         valPastel = n;
     }
-    
+
     @Override
     public void establecerValMenu() {
         valMenu = valHelado + valPastel;
@@ -41,6 +41,11 @@ public class MenuNin extends Menu {
         return valPastel;
     }
 
-    
+    @Override
+    public String toString() {
+        String cadena = String.format("-- Menu de niños --\n%s\n\tHelado: %.2f$\n"
+                + "\tPastel: %.2f$\n", super.toString(), valHelado, valPastel);
+        return cadena;
+    }
 
 }

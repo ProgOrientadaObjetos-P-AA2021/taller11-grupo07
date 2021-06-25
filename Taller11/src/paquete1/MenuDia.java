@@ -9,35 +9,44 @@ package paquete1;
  *
  * @author Renny
  */
-public class MenuDia extends Menu{
+public class MenuDia extends Menu {
+
     private double valPostre;
     private double valBebida;
 
     public MenuDia(String nom, double valIni, double valPos, double valBeb) {
         super(nom, valIni);
+        valPostre = valPos;
+        valBebida = valBeb;
     }
-    
-    public void establecerValPostre(double n){
+
+    public void establecerValPostre(double n) {
         valPostre = n;
     }
-    
-    public void establecerValBebida(double n){
+
+    public void establecerValBebida(double n) {
         valBebida = n;
     }
-    
+
     @Override
     public void establecerValMenu() {
         valMenu = valIniMenu + valPostre + valBebida;
     }
-    
-    public double obtenerValPostre(){
+
+    public double obtenerValPostre() {
         return valPostre;
     }
-    
-    public double obtenerValBebida(){
+
+    public double obtenerValBebida() {
         return valBebida;
     }
 
-    
-    
+    @Override
+    public String toString() {
+        
+        String cadena = String.format("---- Menu del dia ----\n%sPostre: %.2f$\n"
+                + "\tBebida: %.2f$\n", super.toString(), valPostre, valBebida);
+        return cadena;
+    }
+
 }
