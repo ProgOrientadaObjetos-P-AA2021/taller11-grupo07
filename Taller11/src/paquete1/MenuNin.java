@@ -30,7 +30,7 @@ public class MenuNin extends Menu {
 
     @Override
     public void establecerValMenu() {
-        valMenu = valHelado + valPastel;
+        valMenu = valIniMenu + valHelado + valPastel;
     }
 
     public double obtenerValHelado() {
@@ -43,8 +43,11 @@ public class MenuNin extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format("-- Menu de niños --\n%s\n\tHelado: %.2f$\n"
-                + "\tPastel: %.2f$\n", super.toString(), valHelado, valPastel);
+        String cadena = String.format("============== Menu de niños ==============\n%s\n"
+                + "\tHelado: %.2f $\n"
+                + "\tPastel: %.2f $\n"
+                + "\tValor Menu: %.2f\n", super.toString(), valHelado,
+                valPastel, valMenu);
         return cadena;
     }
 

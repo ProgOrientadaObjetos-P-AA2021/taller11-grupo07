@@ -37,7 +37,8 @@ public class MenuCarta extends Menu {
 
     @Override
     public void establecerValMenu() {
-        valMenu = valIniMenu + valBebida + valGuarnicion + (valIniMenu * (porcentaje / 100));
+        valMenu = valIniMenu + valBebida + valGuarnicion
+                + (valIniMenu * (porcentaje / 100));
     }
 
     public double obtenerValGuarnicion() {
@@ -54,11 +55,10 @@ public class MenuCarta extends Menu {
 
     @Override
     public String toString() {
-        
-        String cadena = String.format("---- Menu Carta ----\n%s\n"
-                + "\tValor Guarnicion: %.2f$\n\tValor Bebida: %.2f$\n"
-                + "\tPorcentaje adicional: %.2f$\n",super.toString(), 
-                valGuarnicion, valBebida, porcentaje);
+        String cadena = String.format("============= Menu a la Carta =============\n%s\n"
+                + "\tValor Guarnicion: %.2f$ \n\tValor Bebida: %.2f $\n"
+                + "\tPorcentaje adicional: %.2f $\n\tValor menu: %.2f\n", super.toString(),
+                valGuarnicion, valBebida, porcentaje, valMenu);
         return cadena;
     }
 

@@ -33,8 +33,10 @@ public class MenuEconomico extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format("-- Menu Economico --\n%s\n"
-                + "\tPorcentaje de descuento: %.2f$", super.toString(), porcentaje);
+        String cadena = String.format("============== Menu Economico =============\n%s\n"
+                + "\tPorcentaje de descuento: %.2f $\n"
+                + "\tValor Menu: %.2f\n", super.toString(), 
+                porcentaje,valMenu);
         return cadena;
     }
 

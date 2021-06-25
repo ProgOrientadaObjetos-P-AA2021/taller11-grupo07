@@ -70,9 +70,13 @@ public class Cuenta {
 
     @Override
     public String toString() {
-        String cadena = String.format("Nombre del cliente: %s\n"
-                + "Subtotal: %.2f$\nIva: %.2f$\n"
-                + "\n---- Listado de Menus ----\n", nomCliente, subtotal, iva);
+        String cadena = String.format("======= C U E N T A - A - P A G A R ======\n"
+                + "\tNombre del cliente: %s\n"
+                + "\tSubtotal: %.2f $\n\tIva: %.2f $ \n"
+                + "===========================================\n"
+                + "============ Listado de Menus =============\n"
+                + "===========================================\n\n", 
+                nomCliente, subtotal, iva);
 
         for (int i = 0; i < listaMenu.size(); i++) {
             cadena = String.format("%s"
@@ -80,7 +84,8 @@ public class Cuenta {
                     cadena,
                     listaMenu.get(i));
         }
-        cadena = String.format("%s\nValor a cancelar total: %.2f$", cadena, valTotal);
+        cadena = String.format("%sValor a cancelar total: %.2f $", 
+                cadena, valTotal);
 
         return cadena;
 
