@@ -26,7 +26,7 @@ public abstract class Menu {
 
     public abstract void establecerValMenu();
 
-    public void establecerValIniMeni(double n) {
+    public void establecerValIniMenu(double n) {
         valIniMenu = n;
     }
 
