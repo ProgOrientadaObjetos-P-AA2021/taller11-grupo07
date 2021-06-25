@@ -41,11 +41,11 @@ public class Cuenta {
     }
 
     public void establecerIva(double n) {
-        iva = n / 100;
+        iva = n;
     }
 
     public void establecerValTotal() {
-        valTotal = subtotal + iva;
+        valTotal = subtotal + (iva / 100);
     }
 
     public String obtenerNomCliente() {
@@ -75,7 +75,7 @@ public class Cuenta {
                 + "\tSubtotal: %.2f $\n\tIva: %.2f $ \n"
                 + "===========================================\n"
                 + "============ Listado de Menus =============\n"
-                + "===========================================\n\n", 
+                + "===========================================\n\n",
                 nomCliente, subtotal, iva);
 
         for (int i = 0; i < listaMenu.size(); i++) {
@@ -84,7 +84,7 @@ public class Cuenta {
                     cadena,
                     listaMenu.get(i));
         }
-        cadena = String.format("%sValor a cancelar total: %.2f $", 
+        cadena = String.format("%sValor a cancelar total: %.2f $",
                 cadena, valTotal);
 
         return cadena;

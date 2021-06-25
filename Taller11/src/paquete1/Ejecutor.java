@@ -35,6 +35,7 @@ public class Ejecutor {
         Cuenta cuen = new Cuenta("Xavier", listaMenu, 14);
         cuen.establecerSubtotal();
         cuen.establecerValTotal();
+        
         System.out.println(cuen);
 
     }
